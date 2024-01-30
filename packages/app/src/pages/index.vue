@@ -66,6 +66,17 @@ const filteredFruits = computed(() => {
         </div>
       </div>
 
+
+      <!-- <div v-if="tags">
+        <h2>Liste des tags</h2>
+        <div v-for="tag in tags.data" :key="tag.id">
+          <NuxtLink :to="`/tags/${tag.id}`">
+            {{ tag.name }}
+          </NuxtLink>
+        </div>
+      </div> -->
+
+
       <div v-if="fruits">
 
         <div v-if="filteredFruits.length">
