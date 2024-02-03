@@ -1,11 +1,11 @@
 
-import type { NuxtLink } from '#build/components';
+<!-- import type { NuxtLink } from '#build/components'; -->
 <template>
     <header>
         <nav>
             <ul>
                 <li><NuxtLink to="/">Accueil</NuxtLink></li>
-                <li><NuxtLink to="/exemple-recherche">Rechercher</NuxtLink></li>
+                <li><NuxtLink to="/recherche">Rechercher</NuxtLink></li>
             </ul>
         </nav>
     </header>

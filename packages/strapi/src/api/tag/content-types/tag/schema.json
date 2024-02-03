@@ -4,7 +4,8 @@
   "info": {
     "singularName": "tag",
     "pluralName": "tags",
-    "displayName": "Etiquettes"
+    "displayName": "Etiquettes",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -31,6 +32,9 @@
       "relation": "manyToMany",
       "target": "api::fruit.fruit",
       "mappedBy": "tags"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

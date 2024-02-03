@@ -785,6 +785,7 @@ export interface ApiFruitFruit extends Schema.CollectionType {
     description: Attribute.RichText;
     tags: Attribute.Relation<'api::fruit.fruit', 'manyToMany', 'api::tag.tag'>;
     image: Attribute.Media;
+    imgfruit: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -848,6 +849,7 @@ export interface ApiTagTag extends Schema.CollectionType {
     singularName: 'tag';
     pluralName: 'tags';
     displayName: 'Etiquettes';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -865,6 +867,7 @@ export interface ApiTagTag extends Schema.CollectionType {
       'manyToMany',
       'api::fruit.fruit'
     >;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

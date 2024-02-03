@@ -74,6 +74,12 @@ importers:
       '@strapi/strapi':
         specifier: 4.17.1
         version: 4.17.1(@babel/runtime@7.23.9)(@codemirror/autocomplete@6.12.0)(@codemirror/language@6.10.0)(@codemirror/lint@6.4.2)(@codemirror/search@6.5.5)(@codemirror/state@6.4.0)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.23.1)(codemirror@6.0.1)(pg@8.8.0)(react-dom@18.2.0)(react-router-dom@5.3.4)(react@18.2.0)(redux@4.2.1)(styled-components@5.3.3)
+      markdown-it:
+        specifier: ^14.0.0
+        version: 14.0.0
+      marked:
+        specifier: ^11.2.0
+        version: 11.2.0
       pg:
         specifier: 8.8.0
         version: 8.8.0
@@ -11382,6 +11388,12 @@ packages:
       mdurl: 2.0.0
       punycode.js: 2.3.1
       uc.micro: 2.0.0
+    dev: false
+
+  /marked@11.2.0:
+    resolution: {integrity: sha512-HR0m3bvu0jAPYiIvLUUQtdg1g6D247//lvcekpHO1WMvbwDlwSkZAX9Lw4F4YHE1T0HaaNve0tuAWuV1UJ6vtw==}
+    engines: {node: '>= 18'}
+    hasBin: true
     dev: false
 
   /match-sorter@6.3.3:
