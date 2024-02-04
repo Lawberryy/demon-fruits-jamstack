@@ -19,3 +19,8 @@ You can also run both packages by using `pnpm dev` command.
 ## Online version
 
 You can find the online version here: [https://demon-fruits-app.vercel.app/](https://demon-fruits-app.vercel.app/)
+
+
+## Visual of the project
+
+![Visual of the project](/packages/app/src/assets/media/screencapture-localhost-3000-2024-02-04-23_54_20.png)
