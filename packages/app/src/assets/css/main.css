@@ -1,9 +1,32 @@
 * {
-	min-width: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box
 }
 
 body {
-	margin: 0;
-	padding: 0;
 	@apply font-sans;
+	/* background-color: #171717; */
+	min-height: 100vh;
+}
+
+/* font */
+@font-face {
+	font-family: 'Chewy';
+	src: url('/assets/fonts/Chewy-Regular.ttf');
+}
+.chewy {
+	font-family: 'Chewy';
+}
+
+/* General */
+h1, h2 {
+    font-family: 'Chewy';
+}
+h2 {
+	margin: 20px 0 6px;
+}
+
+.container {
+    padding: 0 30px;
 }

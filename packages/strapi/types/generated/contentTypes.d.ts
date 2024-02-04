@@ -786,6 +786,7 @@ export interface ApiFruitFruit extends Schema.CollectionType {
     tags: Attribute.Relation<'api::fruit.fruit', 'manyToMany', 'api::tag.tag'>;
     image: Attribute.Media;
     imgfruit: Attribute.Media;
+    color: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

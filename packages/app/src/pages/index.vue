@@ -61,47 +61,39 @@ const filteredFruits = computed(() => {
 <template>
   <UiTheHeader />
 
-  <div class="container">
-    <div class="flex flex-col items-center gap-y-4">
+  <div class="flex">
+
+    <!-- <div class="imgHome"></div> -->
+
+    <div class="container flex flex-col items-center gap-y-4">
       <h1>Les fruits du démon</h1>
 
-
-      <div v-if="tags">
-        <div v-for="tag in tags.data" :key="tag.id" @click="toggleTag(tag)">
-          <button :class="{ 'tag-selected': isSelected(tag.id) }">{{ tag.name }}</button>
-        </div>
-      </div>
-
-
-      <div v-if="tags">
-        <h2>Liste des tags</h2>
-        <div v-for="tag in tags.data" :key="tag.id">
-          <NuxtLink :to="`/tags/${tag.slug}`">
+      <section v-if="tags" class="tagsLinks">
+        <h2>Pages des tags</h2>
+        <div class="tags">
+          <NuxtLink :to="`/tags/${tag.slug}`" v-for="tag in tags.data" :key="tag.id" class="tag">
             {{ tag.name }}
           </NuxtLink>
         </div>
-      </div>
+      </section>
 
-      <!-- <input v-model="search.query" placeholder="Rechercher un fruit" type="text"> -->
-
-      <!-- <template v-if="!search.pending">
-        <ul class="list-none grid grid-cols-3 gap-4">
-         <li v-for="fruit in search.results" :key="fruit.id" class="flex flex-col gap-y-4 p-4 border-2 border-black border-solid">
-           <NuxtImg v-if="fruit.image" :src="fruit.image.url" alt="" />
-           <h3 class="my-0">{{ fruit.title }}</h3>
-           <p class="my-0">{{ fruit.description }}</p>
-           <NuxtLink :to="`/fruits/${fruit.slug}`">Voir le fruit</NuxtLink>
-         </li>
-        </ul>
-      </template> -->
+      <section>
+        <h2>Filtrer par tag</h2>
+        <div v-if="tags" class="tags">
+          <div v-for="tag in tags.data" :key="tag.id" @click="toggleTag(tag)">
+            <button :class="{ 'tag-selected': isSelected(tag.id) }" class="tag">{{ tag.name }}</button>
+          </div>
+        </div>
+      </section>
 
 
       <div v-if="fruits">
-        <div v-if="filteredFruits.length">
+        <div v-if="filteredFruits.length" class="grid grid-cols-5 gap-4 fruitCards">
           <UiFruitCard 
             v-for="fruit in filteredFruits" 
             :key="fruit.id" 
             :fruit="fruit"
+            class="flex flex-col gap-y-4 p-4"
           />
         </div>
         <div v-else>
@@ -114,12 +106,64 @@ const filteredFruits = computed(() => {
 </template>
 
 <style scoped>
-  .tag {
-    color: red;
-    cursor: pointer;
+.fruitCards {
+  margin-top: 50px;
+
+  @media screen and (max-width: 1024px){
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media screen and (max-width: 768px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 540px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 430px){
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+h1 {
+  color: #171717;
+  text-align: center;
+  font-size: 55px;
+}
+h2 {
+    color: #171717;
+    font-size: 30px;
+    margin-bottom: 10px;
   }
 
-  .tag-selected {
-    background-color: lightcoral;
+.tagsLinks {
+  margin: 30px 0 40px;
+}
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+
+  .tag {
+    background-color: #171717;
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
   }
+}
+
+  .tag-selected {
+    background-color: lightcoral !important;
+  }
+
+  /* .imgHome {
+    background-image: url('assets/media/Devil_Fruit_Infobox.webp');
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    background-color: #171717;
+    position: sticky;
+    top: 0;
+  } */
 </style>
